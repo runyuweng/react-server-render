@@ -1,19 +1,16 @@
-import { createServer } from 'http';
+import http from 'http';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router';
-import Routes from './src/Routes.js';
+import Routes from './src/Routes';
 
-createServer((req, res) => {
+
+const server = http.createServer((req, res) => {
 
   // This context object contains the results of the render
-  const context = {}
+  const context = {};
 
-  const html = ReactDOMServer.renderToString(
-    <StaticRouter location={req.url} context={context}>
-      <Routes/>
-    </StaticRouter>
-  )
+  const html = 'This is index!';
 
   // context.url will contain the URL to redirect to if a <Redirect> was used
   if (context.url) {

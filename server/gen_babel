@@ -1,4 +1,0 @@
-#!/bin/sh
-babel app.js -o app.babel.js
-cd ./src
-babel Routes.jsx -o Routes.js
