@@ -1,7 +1,6 @@
 import http from 'http';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import ClientRoutes from './src/ClientRoutes';
 import ServerRoutes from './src/ServerRoutes';
 
 const server = http.createServer((req, res) => {
@@ -18,7 +17,7 @@ const server = http.createServer((req, res) => {
     })
     res.end()
   } else {
-    res.write(html)
+    res.write(html);
     res.end()
   }
 }).listen(3000)
