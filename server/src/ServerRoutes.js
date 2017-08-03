@@ -1,18 +1,27 @@
 import React from 'react';
-import { matchPath } from 'react-router';
+import { Router, Route } from 'react-router';
 import Index from './component/Index';
 import Home from './component/Home';
 import Error from './component/Error';
+import ReactDOMServer from 'react-dom/server';
 
-// 简易路由
-const routers = {
-    '/': <Index />,
-    '/home': <Home />
+const routes = (history) => {
+    return <Router history={history}>
+        <Route path="/" component={Index}/>
+        <Route path="/home" component={Home}/>
+    </Router>
 }
 
 function ServerRoutes(req,res){
+    const history = {
+        location: {
+            pathname: req.url
+        }
+    }
+    const data = routes(history);
+    console.log(ReactDOMServer.renderToString(data));
 
-    const elem = routers[req.url] || <Error />;
+    const elem = <Error />;
 
     return elem;
 
