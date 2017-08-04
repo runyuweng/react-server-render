@@ -7,7 +7,12 @@ export default class Home extends Component {
     }
     render(){
         return (
-            <div>This is Home</div>
+            <div>
+                <div style={{background:'#333',color:'#fff'}}>This is Home</div>
+                <div>
+                     { this.props.children }
+                </div>
+            </div>
         )
     }
 }

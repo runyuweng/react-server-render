@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist/ && babel --watch server/ -d dist/",
-    "dev": "supervisor ./dist/app.js"
+    "dev": "supervisor ./dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
   "homepage": "https://github.com/wengwengweng/react-server-render#readme",
   "dependencies": {
     "react": "^15.6.1",
-    "react-router": "^4.1.2"
+    "react-router": "^4.1.2",
+    "react-router-config": "^1.0.0-beta.3",
+    "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
